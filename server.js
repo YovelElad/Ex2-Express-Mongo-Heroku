@@ -1,13 +1,9 @@
 const express = require('express');
 const dotenv = require("dotenv").config();
-const request = require("request");
+const mmongoose = require('mongoose');
 const { flightsRouter } = require("./Routers/flightsRouter");
 const { usersRouter } = require("./Routers/userRouter");
-const mmongoose = require('mongoose');
-const Flight = require('./models/flight')
-const User = require('./models/users');
-const log = require('log-to-file');
-const jwt = require('jsonwebtoken');
+
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -26,15 +22,8 @@ mmongoose.connect(dbURI)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
-
-
-
-
 app.use('/api/auth', usersRouter);
-
 app.use('/api/flights', flightsRouter);
-
 app.use((req, res) => {
     res.status(400).send('Something is broken!');
 });

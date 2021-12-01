@@ -8,27 +8,22 @@ const jwt = require('jsonwebtoken');
 
 exports.checkAuthenticat = {
     isAuthenticated(req, res, next) {
-        console.log("Checking Authorization");
         const authToken = req.headers["authorization"]
-        console.log(`authoToken: ${authToken}`);
         const token = authToken && authToken.split(' ')[1];
         if(!token) {
             log("Check Authorization - denied!","logs.txt");
             res.send("Permission denied");
         }
-        console.log(token);
         jwt.verify(token,process.env.ACCESS_TOKEN_SECRET, (err,user) => {
             if(err) {
                 log("Check Authorization - denied!","logs.txt");
-                res.send("permission denied");
+                res.send("Permission denied");
             }
             log("Check Authorization - aproved!","logs.txt");
             next();
         });
     }
 }
-
-
 
 exports.flightsController = {
     getFlights(req, res) {
@@ -39,14 +34,11 @@ exports.flightsController = {
             })
             .catch((err) => {
                 log("GET all flights - failure","logs.txt");
-                console.log(err);
             });
     },
 
     getFlight(req, res) {
-        console.log("Get a flight");
         const query = { _id: req.params.flightNumber };
-        console.log(query);
         Flight.find(query)
             .then((result) => {
                 log("GET a specific flight - success","logs.txt");
@@ -61,12 +53,11 @@ exports.flightsController = {
             })
             .catch((err) => {
                 log("GET a specific flight - failure","logs.txt");
-                console.log(err);
+                res.send("Wrong Flight Number");
             });
     },
 
     deleteFlight(req, res) {
-        console.log("Delete flight");
         const query = { _id: req.params.flightNumber };
         Flight.findByIdAndDelete(req.params.flightNumber)
             .then((result) => {
@@ -75,13 +66,12 @@ exports.flightsController = {
             })
             .catch((err) => {
                 log("DELETE a specific flight - failure","logs.txt");
-                console.log(err);
+                res.send("Flight not found.");
             });
 
     },
 
     addFlight(req, res) {
-        console.log("Adding flight");
         const flight = new Flight({
             destination: req.body.destination,
             origin: req.body.origin,
@@ -96,8 +86,27 @@ exports.flightsController = {
             })
             .catch((err) => {
                 log("POST add flight - failure","logs.txt");
-                console.log(err);
+                res.send(   `ERROR:
+                            Make sure you provide all details:
+                            destination
+                            origin
+                            date`)
             });
+    },
+    
+    editFlight(req,res) {
+        const flightNumber = req.params.flightNumber;
+        Flight.findByIdAndUpdate(flightNumber, {
+            destination: req.body.destination,
+            origin: req.body.origin,
+            date: req.body.date
+        }, function(err,result) {
+            if(err) {
+                log("PUT update flight - failure","logs.txt");
+            }
+            log("PUT update flight - success","logs.txt");
+            res.send(`flight ${flightNumber} updated`);
+        })
     }
 }
 

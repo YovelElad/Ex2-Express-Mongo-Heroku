@@ -20,3 +20,117 @@
 2021.11.30, 11:46:46.0140 UTC -> GET all flights - success
 2021.11.30, 11:46:46.0141 UTC -> GET all flights - failure
 2021.11.30, 11:46:51.0418 UTC -> GET all flights - success
+2021.11.30, 16:34:10.0693 UTC -> Check Authorization - aproved!
+2021.11.30, 16:34:10.0692 UTC -> Check Authorization - denied!
+2021.11.30, 16:34:10.0848 UTC -> GET all flights - success
+2021.11.30, 16:34:10.0849 UTC -> GET all flights - failure
+2021.11.30, 16:35:10.0494 UTC -> Check Authorization - aproved!
+2021.11.30, 16:35:10.0642 UTC -> GET all flights - success
+2021.11.30, 16:35:16.0948 UTC -> Check Authorization - aproved!
+2021.11.30, 16:35:17.0105 UTC -> GET a specific flight - success
+2021.11.30, 16:35:39.0915 UTC -> Check Authorization - aproved!
+2021.11.30, 16:35:40.0063 UTC -> GET all flights - success
+2021.11.30, 16:35:45.0101 UTC -> Check Authorization - aproved!
+2021.11.30, 16:35:45.0256 UTC -> GET all flights - success
+2021.11.30, 16:35:51.0119 UTC -> Check Authorization - aproved!
+2021.11.30, 16:35:51.0268 UTC -> GET a specific flight - success
+2021.11.30, 16:36:01.0539 UTC -> Check Authorization - denied!
+2021.11.30, 16:36:01.0540 UTC -> Check Authorization - aproved!
+2021.11.30, 16:36:01.0746 UTC -> GET all flights - success
+2021.11.30, 16:36:01.0746 UTC -> GET all flights - failure
+2021.11.30, 16:48:53.0030 UTC -> Check Authorization - aproved!
+2021.11.30, 16:48:53.0178 UTC -> GET all flights - success
+2021.11.30, 16:48:58.0850 UTC -> Check Authorization - aproved!
+2021.11.30, 16:48:59.0001 UTC -> GET a specific flight - success
+2021.11.30, 16:50:22.0547 UTC -> Check Authorization - aproved!
+2021.11.30, 16:50:31.0199 UTC -> Check Authorization - aproved!
+2021.11.30, 16:50:31.0348 UTC -> GET a specific flight - success
+2021.11.30, 16:51:12.0107 UTC -> Check Authorization - aproved!
+2021.11.30, 16:51:17.0734 UTC -> Check Authorization - aproved!
+2021.11.30, 16:51:17.0882 UTC -> GET a specific flight - success
+2021.12.01, 09:04:05.0329 UTC -> Check Authorization - aproved!
+2021.12.01, 09:04:07.0336 UTC -> GET all flights - success
+2021.12.01, 09:05:23.0259 UTC -> Check Authorization - denied!
+2021.12.01, 09:05:23.0260 UTC -> Check Authorization - aproved!
+2021.12.01, 09:05:24.0206 UTC -> GET all flights - success
+2021.12.01, 09:05:24.0209 UTC -> GET all flights - failure
+2021.12.01, 09:05:56.0476 UTC -> Check Authorization - aproved!
+2021.12.01, 09:05:56.0668 UTC -> GET all flights - success
+2021.12.01, 09:06:16.0117 UTC -> Check Authorization - denied!
+2021.12.01, 09:06:16.0119 UTC -> Check Authorization - denied!
+2021.12.01, 09:06:51.0404 UTC -> Check Authorization - aproved!
+2021.12.01, 09:06:51.0657 UTC -> GET a specific flight - success
+2021.12.01, 09:08:02.0534 UTC -> Check Authorization - aproved!
+2021.12.01, 09:08:02.0536 UTC -> GET a specific flight - failure
+2021.12.01, 09:10:35.0060 UTC -> Check Authorization - aproved!
+2021.12.01, 09:10:35.0053 UTC -> Check Authorization - denied!
+2021.12.01, 09:10:35.0067 UTC -> GET a specific flight - failure
+2021.12.01, 10:08:56.0575 UTC -> Check Authorization - aproved!
+2021.12.01, 10:08:56.0808 UTC -> PUT update flight - success
+2021.12.01, 10:10:26.0485 UTC -> Check Authorization - aproved!
+2021.12.01, 10:10:26.0490 UTC -> GET a specific flight - failure
+2021.12.01, 10:10:56.0607 UTC -> Check Authorization - aproved!
+2021.12.01, 10:10:56.0794 UTC -> GET a specific flight - success
+2021.12.01, 10:11:44.0652 UTC -> Check Authorization - aproved!
+2021.12.01, 10:11:44.0668 UTC -> GET a specific flight - failure
+2021.12.01, 10:12:05.0309 UTC -> Check Authorization - aproved!
+2021.12.01, 10:12:05.0342 UTC -> GET a specific flight - failure
+2021.12.01, 10:15:49.0740 UTC -> Check Authorization - aproved!
+2021.12.01, 10:15:49.0907 UTC -> DELETE a specific flight - success
+2021.12.01, 10:17:34.0029 UTC -> Check Authorization - aproved!
+2021.12.01, 10:17:34.0235 UTC -> DELETE a specific flight - success
+2021.12.01, 10:18:07.0982 UTC -> Check Authorization - aproved!
+2021.12.01, 10:18:09.0996 UTC -> DELETE a specific flight - success
+2021.12.01, 10:18:16.0634 UTC -> Check Authorization - aproved!
+2021.12.01, 10:18:16.0636 UTC -> DELETE a specific flight - failure
+2021.12.01, 10:18:21.0252 UTC -> Check Authorization - aproved!
+2021.12.01, 10:18:21.0457 UTC -> DELETE a specific flight - success
+2021.12.01, 10:18:34.0381 UTC -> Check Authorization - aproved!
+2021.12.01, 10:18:34.0383 UTC -> DELETE a specific flight - failure
+2021.12.01, 10:18:49.0571 UTC -> Check Authorization - aproved!
+2021.12.01, 10:18:49.0740 UTC -> GET a specific flight - success
+2021.12.01, 10:18:49.0741 UTC -> GET a specific flight - failure
+2021.12.01, 10:18:57.0195 UTC -> Check Authorization - aproved!
+2021.12.01, 10:18:58.0246 UTC -> DELETE a specific flight - success
+2021.12.01, 10:19:08.0492 UTC -> Check Authorization - aproved!
+2021.12.01, 10:19:08.0495 UTC -> DELETE a specific flight - failure
+2021.12.01, 11:31:20.0284 UTC -> Check Authorization - aproved!
+2021.12.01, 11:31:20.0453 UTC -> GET all flights - success
+2021.12.01, 11:33:12.0571 UTC -> Check Authorization - aproved!
+2021.12.01, 11:33:12.0579 UTC -> POST add flight - failure
+2021.12.01, 11:35:01.0593 UTC -> Check Authorization - aproved!
+2021.12.01, 11:35:01.0755 UTC -> GET all flights - success
+2021.12.01, 11:37:21.0194 UTC -> Check Authorization - aproved!
+2021.12.01, 11:37:21.0196 UTC -> POST add flight - failure
+2021.12.01, 11:37:43.0889 UTC -> Check Authorization - aproved!
+2021.12.01, 11:37:43.0891 UTC -> POST add flight - failure
+2021.12.01, 11:39:00.0789 UTC -> Check Authorization - aproved!
+2021.12.01, 11:39:00.0807 UTC -> POST add flight - failure
+2021.12.01, 11:39:36.0437 UTC -> Check Authorization - aproved!
+2021.12.01, 11:39:36.0624 UTC -> POST add flight - success
+2021.12.01, 11:50:13.0340 UTC -> Check Authorization - denied!
+2021.12.01, 11:50:13.0342 UTC -> Check Authorization - denied!
+2021.12.01, 11:50:43.0155 UTC -> Check Authorization - aproved!
+2021.12.01, 11:50:43.0329 UTC -> POST add flight - success
+2021.12.01, 11:50:58.0112 UTC -> POST add flight - failure
+2021.12.01, 11:50:58.0110 UTC -> Check Authorization - aproved!
+2021.12.01, 11:51:37.0121 UTC -> Check Authorization - aproved!
+2021.12.01, 11:51:37.0274 UTC -> POST add flight - success
+2021.12.01, 11:52:21.0126 UTC -> Check Authorization - aproved!
+2021.12.01, 11:52:21.0129 UTC -> POST add flight - failure
+2021.12.01, 12:10:53.0336 UTC -> Check Authorization - aproved!
+2021.12.01, 12:10:53.0331 UTC -> Check Authorization - denied!
+2021.12.01, 12:10:53.0926 UTC -> GET all flights - success
+2021.12.01, 12:10:53.0929 UTC -> GET all flights - failure
+2021.12.01, 12:11:36.0093 UTC -> Check Authorization - aproved!
+2021.12.01, 12:11:36.0257 UTC -> GET all flights - success
+2021.12.01, 12:11:48.0896 UTC -> Check Authorization - aproved!
+2021.12.01, 12:11:49.0047 UTC -> GET a specific flight - success
+2021.12.01, 12:12:26.0623 UTC -> Check Authorization - aproved!
+2021.12.01, 12:12:26.0791 UTC -> GET all flights - success
+2021.12.01, 12:12:34.0170 UTC -> Check Authorization - aproved!
+2021.12.01, 12:12:34.0319 UTC -> GET a specific flight - success
+2021.12.01, 12:12:56.0802 UTC -> Check Authorization - aproved!
+2021.12.01, 12:12:56.0998 UTC -> DELETE a specific flight - success
+2021.12.01, 12:13:01.0627 UTC -> DELETE a specific flight - failure
+2021.12.01, 12:13:01.0625 UTC -> Check Authorization - aproved!
