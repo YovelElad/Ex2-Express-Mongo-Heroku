@@ -2,49 +2,46 @@ const Flight = require('../models/flight');
 const User = require('../models/users');
 const request = require("request");
 const dotenv = require("dotenv").config();
+const log = require('log-to-file');
+const jwt = require('jsonwebtoken');
 
 
 exports.checkAuthenticat = {
     isAuthenticated(req, res, next) {
-        console.log("Checking Authorization");
-        const query = { _id: req.headers["authorization"] };
-        console.log(req.headers["authorization"]);
-        User.find(query)
-            .then((result) => {
-                console.log("user Found");
-                console.log(result[0]._id);
-                if (result[0]._id == req.headers["authorization"])
-                    next();
-                else
-                    res.send("Permission denied!");
-            })
-            .catch((err) => {
-                console.log(err);
-                res.send("Permission denied!");
-            });
+        const authToken = req.headers["authorization"]
+        const token = authToken && authToken.split(' ')[1];
+        if(!token) {
+            log("Check Authorization - denied!","logs.txt");
+            res.send("Permission denied");
+        }
+        jwt.verify(token,process.env.ACCESS_TOKEN_SECRET, (err,user) => {
+            if(err) {
+                log("Check Authorization - denied!","logs.txt");
+                res.send("Permission denied");
+            }
+            log("Check Authorization - aproved!","logs.txt");
+            next();
+        });
     }
 }
-
-
 
 exports.flightsController = {
     getFlights(req, res) {
         Flight.find()
             .then((result) => {
+                log("GET all flights - success","logs.txt");
                 res.send(result);
             })
             .catch((err) => {
-                console.log(err);
+                log("GET all flights - failure","logs.txt");
             });
     },
 
-
     getFlight(req, res) {
-        console.log("Get a flight");
         const query = { _id: req.params.flightNumber };
-        console.log(query);
         Flight.find(query)
             .then((result) => {
+                log("GET a specific flight - success","logs.txt");
                 url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${result[0]["destination"]}/${result[0]["date"]}?unitGroup=us&key=${process.env.API_NEW_KEY}`
                 request(url, function (error, response, body) {
                     res.send(`Flight Number: ${result[0]["_id"]}
@@ -55,40 +52,61 @@ exports.flightsController = {
                 })
             })
             .catch((err) => {
-                console.log(err);
+                log("GET a specific flight - failure","logs.txt");
+                res.send("Wrong Flight Number");
             });
     },
 
     deleteFlight(req, res) {
-        console.log("Delete flight");
         const query = { _id: req.params.flightNumber };
         Flight.findByIdAndDelete(req.params.flightNumber)
             .then((result) => {
+                log("DELETE a specific flight - success","logs.txt");
                 res.send("The flight was deleted!");
             })
             .catch((err) => {
-                console.log(err);
+                log("DELETE a specific flight - failure","logs.txt");
+                res.send("Flight not found.");
             });
 
     },
 
     addFlight(req, res) {
-        console.log("Adding flight");
         const flight = new Flight({
             destination: req.body.destination,
             origin: req.body.origin,
             date: req.body.date
         })
-
         flight.save()
             .then((result) => {
+                log("POST add flight - success","logs.txt");
                 res.send(`The flight was added successfuly.
                             Flight details:
                             ${result}`)
             })
             .catch((err) => {
-                console.log(err);
+                log("POST add flight - failure","logs.txt");
+                res.send(   `ERROR:
+                            Make sure you provide all details:
+                            destination
+                            origin
+                            date`)
             });
+    },
+    
+    editFlight(req,res) {
+        const flightNumber = req.params.flightNumber;
+        Flight.findByIdAndUpdate(flightNumber, {
+            destination: req.body.destination,
+            origin: req.body.origin,
+            date: req.body.date
+        }, function(err,result) {
+            if(err) {
+                log("PUT update flight - failure","logs.txt");
+            }
+            log("PUT update flight - success","logs.txt");
+            res.send(`flight ${flightNumber} updated`);
+        })
     }
 }
 
