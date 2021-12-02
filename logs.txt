@@ -134,3 +134,11 @@
 2021.12.01, 12:12:56.0998 UTC -> DELETE a specific flight - success
 2021.12.01, 12:13:01.0627 UTC -> DELETE a specific flight - failure
 2021.12.01, 12:13:01.0625 UTC -> Check Authorization - aproved!
+2021.12.01, 14:40:49.0247 UTC -> Check Authorization - aproved!
+2021.12.01, 14:40:49.0452 UTC -> GET all flights - success
+2021.12.01, 14:41:24.0926 UTC -> Check Authorization - aproved!
+2021.12.01, 14:41:24.0943 UTC -> POST add flight - failure
+2021.12.01, 14:41:36.0489 UTC -> Check Authorization - aproved!
+2021.12.01, 14:41:36.0657 UTC -> POST add flight - success
+2021.12.01, 14:41:58.0902 UTC -> Check Authorization - aproved!
+2021.12.01, 14:41:59.0069 UTC -> GET a specific flight - success
